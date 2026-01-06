@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class = 'container-fluid px-2.5'>
+    
     <h1>Task List</h1>
     <form method = 'get'>
         {% csrf_token %}
@@ -18,5 +18,4 @@
     </ul>
 
     <p><a href = '{% url "task-create" %}'>create task</a></p>
-    </div>
 {% endblock %}
