@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <h1>Task Detail</h1>
+    <h2>{{ task.title }}</h2>
+    <p>Status: {{ task.status }}</p>
+    <p>Priority: {{ task.priority }}</p>
+    <p>Description: {{ task.description }}</p>
+    <p>Deadline: {{ task.deadline }}</p>
+    <p>author: {{ task.author }}</p>
+    {% if task.author == request.user %}
+        <p><a href="{% url 'edit-task' task.pk %}">Edit Task </a><a href = '{% url "delete-task" task.pk %}'> Delete Task</a></p>
+    {% endif %}
+
+{% endblock %}
